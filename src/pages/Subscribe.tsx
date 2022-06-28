@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
 import { CircleNotch } from "phosphor-react";
 import { useCreateSubscriberMutation } from "../graphql/generated";
+import mockImg from "../assets/mock.png";
 
 export function Subscribe() {
   const navigate = useNavigate();
@@ -76,7 +77,7 @@ export function Subscribe() {
           </form>
         </div>
       </div>
-      <img src="/src/assets/mock.png" className="mt-10" alt="Hero Image" />
+      <img src={mockImg} className="mt-10" alt="Hero Image" />
     </div>
   );
 }
