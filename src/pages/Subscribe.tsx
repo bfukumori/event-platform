@@ -64,7 +64,7 @@ export function Subscribe() {
               className="bg-gray-900 rounded px-5 h-14 outline-none focus:ring-1 ring-green-500 invalid:ring-red-500"
               type="text"
               placeholder="Seu nome completo"
-              onChange={(event) => setName(event.target.value.trim())}
+              onChange={(event) => setName(event.target.value)}
             />
             {error && <span className="text-xs text-red-500">{error}</span>}
             <input
@@ -72,7 +72,7 @@ export function Subscribe() {
               className="bg-gray-900 rounded px-5 h-14 outline-none focus:ring-1 ring-green-500 invalid:ring-red-500"
               type="email"
               placeholder="Digite seu e-mail"
-              onChange={(event) => setEmail(event.target.value.trim())}
+              onChange={(event) => setEmail(event.target.value)}
             />
             <button
               type="submit"
