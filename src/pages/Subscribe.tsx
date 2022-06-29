@@ -14,8 +14,8 @@ export function Subscribe() {
 
   const [createSubscriber, { loading }] = useCreateSubscriberMutation({
     variables: {
-      name,
-      email,
+      name: name.trim(),
+      email: email.trim(),
     },
   });
 
