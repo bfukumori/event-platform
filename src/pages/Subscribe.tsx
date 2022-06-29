@@ -1,4 +1,4 @@
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
 import { CircleNotch } from "phosphor-react";
@@ -10,6 +10,7 @@ export function Subscribe() {
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
 
   const [createSubscriber, { loading }] = useCreateSubscriberMutation({
     variables: {
@@ -17,9 +18,17 @@ export function Subscribe() {
       email,
     },
   });
+  console.log(name);
+  useEffect(() => {
+    setError("");
+  }, [name]);
 
   async function handleSubscribe(event: FormEvent) {
     event.preventDefault();
+    if (name.trim() === "") {
+      setError("Preencha com um nome válido");
+      return null;
+    }
     await createSubscriber();
     navigate("/event");
   }
@@ -51,16 +60,19 @@ export function Subscribe() {
             className="flex flex-col gap-2 w-full"
           >
             <input
-              className="bg-gray-900 rounded px-5 h-14"
+              required
+              className="bg-gray-900 rounded px-5 h-14 outline-none focus:ring-1 ring-green-500 invalid:ring-red-500"
               type="text"
               placeholder="Seu nome completo"
-              onChange={(event) => setName(event.target.value)}
+              onChange={(event) => setName(event.target.value.trim())}
             />
+            {error && <span className="text-xs text-red-500">{error}</span>}
             <input
-              className="bg-gray-900 rounded px-5 h-14"
+              required
+              className="bg-gray-900 rounded px-5 h-14 outline-none focus:ring-1 ring-green-500 invalid:ring-red-500"
               type="email"
               placeholder="Digite seu e-mail"
-              onChange={(event) => setEmail(event.target.value)}
+              onChange={(event) => setEmail(event.target.value.trim())}
             />
             <button
               type="submit"
