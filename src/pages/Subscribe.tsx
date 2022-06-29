@@ -18,7 +18,7 @@ export function Subscribe() {
       email,
     },
   });
-  console.log(name);
+
   useEffect(() => {
     setError("");
   }, [name]);
