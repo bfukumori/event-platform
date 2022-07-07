@@ -19,7 +19,7 @@
 </p>
 
 <h1 align="center">
-    <img alt="event-platform" title="#event-platform" src="./.github/logo.svg" />
+    Ignite Lab - Event Platform
 </h1>
 
 <p align="center">
