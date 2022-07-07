@@ -13,7 +13,7 @@
     <img alt="Stargazers" src="https://img.shields.io/github/stars/bfukumori/event-platform?style=social">
   </a>
 
-  <a href="https://ignite-feed-eta.vercel.app/">
+  <a href="event-platform-cyan-one.vercel.app">
     <img alt="event-platform" src="https://img.shields.io/badge/event-platform-%237159c1?style=flat&logo=ghost">
   </a>
 </p>
